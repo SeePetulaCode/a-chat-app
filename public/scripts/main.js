@@ -15,6 +15,20 @@
  */
 'use strict';
 
+var messageListElement = document.getElementById('messages');
+var messageFormElement = document.getElementById('message-form');
+var messageInputElement = document.getElementById('message');
+var submitButtonElement = document.getElementById('submit');
+var imageButtonElement = document.getElementById('submitImage');
+var imageFormElement = document.getElementById('image-form');
+var mediaCaptureElement = document.getElementById('mediaCapture');
+var userPicElement = document.getElementById('user-pic');
+var userNameElement = document.getElementById('user-name');
+var signInButtonElement = document.getElementById('sign-in');
+var signOutButtonElement = document.getElementById('sign-out');
+var signInSnackbarElement = document.getElementById('must-signin-snackbar');
+
+
 // Signs-in Friendly Chat.
 function signIn() {
   alert('TODO: Implement Google Sign-In');
@@ -33,18 +47,19 @@ function signOut() {
 //Initialize firebase.
 function initFirebase(){
 
-  firebase.initializeApp({
-  
-  "apiKey": "AIzaSyAOdMllKGAMcdID1ykbH-azuStXbYUuawQ",
-  "authDomain": "smapchat-78980.firebaseapp.com",
-  "databaseURL": "https://smapchat-78980.firebaseio.com",
-  "projectId": "smapchat-78980",
-  "storageBucket": "smapchat-78980.appspot.com",
-  "messagingSenderId": "192851239730",
-  "appId": "1:192851239730:web:42d7f3bbc472fc6b376d2b",
-  "measurementId": "G-RDM5HGRQK5"
 
+  firebase.initializeApp({
+    "apiKey": "AIzaSyAOdMllKGAMcdID1ykbH-azuStXbYUuawQ",
+    "authDomain": "smapchat-78980.firebaseapp.com",
+    "databaseURL": "https://smapchat-78980.firebaseio.com",
+    "projectId": "smapchat-78980",
+    "storageBucket": "smapchat-78980.appspot.com",
+    "messagingSenderId": "192851239730",
+    "appId": "1:192851239730:web:42d7f3bbc472fc6b376d2b",
+    "measurementId": "G-RDM5HGRQK5"
   });
+
+ 
 
 
 }
@@ -307,7 +322,7 @@ function checkSetup() {
   }
 }
 // Shortcuts to DOM Elements.
-const messageListElement = document.getElementById('messages');
+/* const messageListElement = document.getElementById('messages');
 var messageFormElement;
 var messageInputElement;
 var submitButtonElement;
@@ -319,48 +334,24 @@ var userNameElement;
 var signInButtonElement;
 var signOutButtonElement;
 var signInSnackbarElement;
-var btn = document.getElementById("submit")
+var btn = document.getElementById("submit") */
 
 
-
-// Add Michael's js
-
-
-/*
-btn.addEventListener('click', function(){
-
-
-  let p = document.createElement("p"); 
-  const msg = document.querySelector('#message')
-  const msgContainer = document.querySelector('#messages')
-
-  p.innerText = msg.value
-  msgContainer.append(p)
-  msg.value = ""
-
-  console.log(msgContainer, "<--- msgContainer", "p:", p)
-
-
-} */
-
-var btn = document.getElementById("submit")
-​
+var btn = document.getElementById("submit");
 btn.addEventListener('click', function () {
   let p = document.createElement("p");
-  const msg = document.querySelector('#message')
-  const msgContainer = document.querySelector('#messages')
-  p.innerText = msg.value
-  msgContainer.append(p)
-  msg.value = ""
+  const msg = document.querySelector('#message');
+  const msgContainer = document.querySelector('#messages');
+  p.innerText = msg.value;
+  msgContainer.append(p);
+  msg.value = "";
   console.log(msgContainer, "<---- msgContainer", "p:", p)
-})
-​
-​
+});
 function addEle(text) {
   let p = document.createElement("p");
-  let f = document.querySelector('form')
-  p.innerText = text
-  f.appendChild(p)
+  let f = document.querySelector('form');
+  p.innerText = text;
+  f.appendChild(p);
 }
 
 
